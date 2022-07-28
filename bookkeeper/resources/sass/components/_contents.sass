@@ -1,0 +1,249 @@
+.contents
+    box-shadow: $box-shadow
+    border-radius: $radius
+    background-color: $white
+    font-size: 0.875em
+    margin-top: 2em
+    margin-bottom: 1em
+    &--overview
+        margin-top: 0
+    &--sidebar
+        margin-top: 1em
+
+    &__body, &__footer, &__head
+        padding: 1em 1.5em
+        @media screen and (max-width: $desktop)
+            padding: 1em 0.75em
+
+    &__body
+        &--focus
+            padding-top: 3em
+            padding-bottom: 3em
+
+    &__interim
+        text-align: right
+        height: 0
+        margin-bottom: -1em
+
+    &__footer
+        &--focus
+            padding-top: 3em
+            padding-bottom: 2em
+
+    &__head
+        padding-top: 0
+        padding-bottom: 0
+        position: relative
+        height: 0
+        margin-bottom: 0 !important
+
+    &__search
+        padding-top: 0.75em
+        padding-bottom: 1em
+        @media screen and (max-width: $tablet-down)
+            padding-top: 1.25em
+            text-align: center
+
+    &__footer
+        border-bottom-left-radius: $radius
+        border-bottom-right-radius: $radius
+        background-color: $white-ter
+        text-align: center
+        &--inverted
+            color: $white
+            background-color: $primary
+
+    td
+        vertical-align: middle
+
+    &__message
+        padding: 2.5em 0.75em !important
+
+    &__inner-heading
+        font-size: 1.5em
+        margin-bottom: 0.75em
+        margin-top: 1em
+        color: $primary
+        font-weight: $weight-bold
+        &--start
+            margin-top: 0
+
+    &__inner-text--separated
+        margin-bottom: 2em
+
+.dropdown-content
+    padding-top: 0
+
+.dropdown-head
+    padding: 0.75em 1em
+    color: $white
+    background-color: $primary
+    font-size: 0.75em
+    font-weight: $weight-bold
+    margin-bottom: 0.66666667em
+
+.dropdown-item .icon
+    display: inline-block
+    position: absolute
+    right: 0.375em
+    top: 50%
+    transform: translateY(-0.5em)
+
+.dropdown-trigger button
+    background-color: transparent
+    border-color: $grey-light
+    &:hover
+        border-color: $grey-light
+
+.pagination-link,.pagination-previous, .pagination-next
+    &.disabled
+        opacity: 0.2
+
+.tabs
+    &--forms
+        margin-bottom: -2em !important
+
+.contents-sidebar
+    &__spacer
+        height: 2.75em
+        @media screen and (max-width: $tablet)
+            display: none
+
+    &__heading
+        padding-left: $radius
+        font-size: 1.25em
+        font-weight: $weight-bold
+        line-height: 1.5em
+
+    &__item-heading
+        font-size: 0.71428571em
+        font-weight: $weight-bold
+        color: $primary
+        text-align: left
+        &--inverted
+            color: rgba($white, 0.7)
+
+    &__item-text
+        color: $grey-darker
+
+.subcontents
+    &__item
+        position: relative
+        font-size: 1.14285714em
+        padding: 0.75em 2.25em 0.75em 0
+        border-bottom: 1px solid $grey-lighter
+        &--padded
+            padding: 1em 0
+        &:last-child
+            border-bottom: 0
+
+        .delete-option, .relation-detach
+            display: inline-block
+            position: absolute
+            top: 50%
+            right: 0
+            transform: translateY(-50%)
+
+        .relation-detach
+            right: 10.5px
+
+        &--form
+            padding: 0.375em 3em 0.375em 1em
+            font-size: 1em
+            border-radius: $radius
+            box-shadow: $box-shadow
+            margin-bottom: 0.5em
+
+.searcher
+    position: relative
+    &--form
+        margin-bottom: 2em
+
+    &__input
+        background-color: transparent
+        color: $white
+        width: 100%
+        font-size: 1.14285714em
+        padding: 0.5em 0
+        border: 0 !important
+        border-bottom: 1px solid $white !important
+        outline: none
+        border-radius: 0 !important
+        +placeholder
+            color: rgba($white, 0.7)
+        &--form
+            color: $primary
+            border-bottom-color: $grey-lighter !important
+            &:focus
+                border-bottom-color: $primary !important
+            +placeholder
+                color: $grey-light
+
+    &__hint
+        margin-top: 0.5em
+        font-size: 0.75em
+        text-align: left
+        color: rgba($white, 0.6)
+
+    &__results
+        position: absolute
+        top: 2.57142857em
+        left: 0
+        text-align: left
+        background-color: $white
+        color: $primary
+        width: 100%
+        border-radius: $radius
+        box-shadow: $box-shadow
+        overflow: hidden
+        z-index: 100
+
+    &__result
+        position: relative
+        border-bottom: 1px solid $primary
+        line-height: 3em
+        cursor: pointer
+        padding: 0 1em
+        width: 100%
+        display: block !important
+        &:last-child
+            border-bottom: 0
+
+        &--selected
+            background-color: rgba($primary, 0.15)
+
+        &--compact
+            line-height: 2.5em
+            font-size: 0.875em
+
+    &__result-input
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        z-index: -1
+        opacity: 0
+
+.content-option
+    height: 2.5em
+    border-color: $grey-lighter !important
+
+.content-option-dropdown
+    padding-top: 0.5rem
+
+.no-touchevents
+    a
+        transition: color $duration-short, opacity $duration-short, background-color $duration-short
+
+    .searcher__input
+        transition: border-bottom-color $duration-short
+        &--form:hover
+            border-bottom-color: $grey-light !important
+            &:focus
+                border-bottom-color: $primary !important
+
+    .content-option
+        transition: border-color $duration-short
+        &:hover
+            border-color: $grey-light !important
